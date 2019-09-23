@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+var inquirer = require('inquirer');
 
-    <title>Print Quotes</title>
-</head>
-<body>
-    <script type="text/javascript">
-        // Variable that prompts user for a quote
-        var question = prompt("What is the quote?");
+console.log('Hi. You will be asked a couple questions.');
 
-
-        // Variable that prompts user for the author of quote
-        var author = prompt("Who said it?");
-
-        alert(author + " says, " + question);
-
-    </script>
-    
-</body>
-</html>
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'quote',
+            message: 'What is the quote?'
+        },
+        {
+            type: 'input',
+            name: 'author',
+            message: 'Who said it?'
+        },
+  ])
+  .then(answers => {
+    console.log(`${answers.author} says, \"${answers.quote}.\"`);
+});
