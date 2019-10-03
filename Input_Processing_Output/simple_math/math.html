@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mathmatic Magic</title>
+</head>
+<body>
+    <div>
+
+        <input type="number" id="number">
+        <button id="enter">Enter</button>
+        <input id="result" type="text" value="" readonly>
+    </div>
+
+    <script>
+
+        const number = document.querySelector('#number');
+        const enter = document.querySelector('#enter');
+        const result = document.querySelector('#result');
+
+        const series = () => {
+        var n = number.value;
+        var total = 0;
+            for (let i = 1; i <= n; i++) {
+                total += i;
+        }
+        result.value = total;
+        };
+
+        enter.addEventListener('click', series);
+    
+    </script>
+                   
+</body>
+</html>
